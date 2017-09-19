@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+    
+<struts>
+	<!-- 配置常量 -->
+	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<constant name="struts.locale" value="zh_CN"></constant>
+	
+	 <!-- 所有的Action定义都应该放在package下 -->
+    <package name="test" extends="myPackage">
+       <action name="login" class="com.zhiyou.struts2demo.action.LoginAction">
+          <result name="input">/index.jsp</result>
+             <result name="success">/WEB-INF/pages/success.jsp</result>
+         </action>
+     </package>
+     
+      <package name="myPackage" extends="struts-default">
+	 	<global-results>
+	 		<result name="error">/WEB-INF/pages/error.jsp</result>
+	 	</global-results>
+	 </package>
+</struts>
